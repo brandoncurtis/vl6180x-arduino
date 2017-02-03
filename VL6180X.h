@@ -101,6 +101,7 @@ class VL6180X
     void setScaling(uint8_t new_scaling);
     inline uint8_t getScaling(void) { return scaling; }
 
+    void startRangeMeasurement(void);
     uint8_t readRangeSingle(void);
     inline uint16_t readRangeSingleMillimeters(void) { return (uint16_t)scaling * readRangeSingle(); }
     uint16_t readAmbientSingle(void);

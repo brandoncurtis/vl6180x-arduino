@@ -263,6 +263,12 @@ void VL6180X::setScaling(uint8_t new_scaling)
   writeReg(VL6180X::SYSRANGE__RANGE_CHECK_ENABLES, (rce & 0xFE) | (scaling == 1));
 }
 
+// starts a single-shot ranging measurement
+void VL6180X::startRangeMeasurement()
+{
+  writeReg(SYSRANGE__START, 0x01);
+}
+
 // Performs a single-shot ranging measurement
 uint8_t VL6180X::readRangeSingle()
 {
